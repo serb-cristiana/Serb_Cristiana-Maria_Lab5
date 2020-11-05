@@ -31,14 +31,20 @@ namespace Serb_Cristiana_Maria_Lab5
         PhoneNumbersDataSetTableAdapters.PhoneNumbersTableAdapter tblPhoneNumbersAdapter = new PhoneNumbersDataSetTableAdapters.PhoneNumbersTableAdapter(); 
         Binding txtPhoneNumberBinding = new Binding(); 
         Binding txtSubscriberBinding = new Binding();
+        Binding txtContract_valueBinding = new Binding();
+        Binding txtContract_dateBinding = new Binding();
         public MainWindow()
         {
             InitializeComponent();
             grdMain.DataContext = phoneNumbersDataSet.PhoneNumbers; 
             txtPhoneNumberBinding.Path = new PropertyPath("Phonenum"); 
-            txtSubscriberBinding.Path = new PropertyPath("Subscriber"); 
-            txtPhoneNumber.SetBinding(TextBox.TextProperty, txtPhoneNumberBinding); 
+            txtSubscriberBinding.Path = new PropertyPath("Subscriber");
+            txtContract_valueBinding.Path = new PropertyPath("Contract_value");
+            txtContract_dateBinding.Path = new PropertyPath("Contract_date");
+            txtPhoneNumber.SetBinding(TextBox.TextProperty, txtPhoneNumberBinding);
             txtSubscriber.SetBinding(TextBox.TextProperty, txtSubscriberBinding);
+            txtContract_value.SetBinding(TextBox.TextProperty, txtContract_valueBinding);
+            txtContract_date.SetBinding(TextBox.TextProperty, txtSubscriberBinding);
         }
         private void lstPhonesLoad()
         {
@@ -152,6 +158,10 @@ namespace Serb_Cristiana_Maria_Lab5
             btnNext.IsEnabled = true;
             txtPhoneNumber.IsEnabled = false;
             txtSubscriber.IsEnabled = false;
+            txtContract_value.IsEnabled = false;
+            txtContract_date.IsEnabled = false;
+            txtContract_value.SetBinding(TextBox.TextProperty, txtContract_valueBinding);
+            txtContract_date.SetBinding(TextBox.TextProperty, txtContract_dateBinding);
             txtPhoneNumber.SetBinding(TextBox.TextProperty, txtPhoneNumberBinding);
             txtSubscriber.SetBinding(TextBox.TextProperty, txtSubscriberBinding);
         }
@@ -198,8 +208,8 @@ namespace Serb_Cristiana_Maria_Lab5
                     editRow.BeginEdit();
                     editRow["Phonenum"] = txtPhoneNumber.Text.Trim();
                     editRow["Subscriber"] = txtSubscriber.Text.Trim();
-                    editRow["Contract_value"] = txtPhoneNumber.Text.Trim();
-                    editRow["Contract_date"] = txtSubscriber.Text.Trim();
+                    editRow["Contract_value"] = txtContract_value.Text.Trim();
+                    editRow["Contract_date"] = txtContract_date.Text.Trim();
                     editRow.EndEdit();
                     tblPhoneNumbersAdapter.Update(phoneNumbersDataSet.PhoneNumbers);
                     phoneNumbersDataSet.AcceptChanges();
@@ -223,6 +233,8 @@ namespace Serb_Cristiana_Maria_Lab5
                 txtContract_date.IsEnabled = false;
                 txtPhoneNumber.SetBinding(TextBox.TextProperty, txtPhoneNumberBinding);
                 txtSubscriber.SetBinding(TextBox.TextProperty, txtSubscriberBinding);
+                txtContract_value.SetBinding(TextBox.TextProperty, txtContract_valueBinding);
+                txtContract_date.SetBinding(TextBox.TextProperty, txtContract_dateBinding);
             }
             else
             if (action == ActionState.Delete)
@@ -253,6 +265,8 @@ namespace Serb_Cristiana_Maria_Lab5
                 txtContract_date.IsEnabled = false;
                 txtPhoneNumber.SetBinding(TextBox.TextProperty, txtPhoneNumberBinding);
                 txtSubscriber.SetBinding(TextBox.TextProperty, txtSubscriberBinding);
+                txtContract_value.SetBinding(TextBox.TextProperty, txtContract_valueBinding);
+                txtContract_date.SetBinding(TextBox.TextProperty, txtContract_dateBinding);
             }
         }
         private void btnPrevious_Click(object sender, RoutedEventArgs e)
