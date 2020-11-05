@@ -35,7 +35,7 @@
         <Button Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="35,86,0,0" VerticalAlignment="Top" Width="75" Click="btnEdit_Click" Height="20" Grid.ColumnSpan="2"/>
         <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="167,388,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click" IsEnabled="False" Height="20" Grid.ColumnSpan="2"/>
         <Button Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="422,388,0,0" VerticalAlignment="Top" Width="76" Click="btnCancel_Click" IsEnabled="False" Height="23" Grid.ColumnSpan="2"/>
-        <ListBox x:Name="lstPhones" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="430" Margin="167,43,0,0" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" ItemTemplate="{StaticResource ResourceKey=PhoneNumbersTemplate}" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="lstPhones" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="469" Margin="167,43,0,0" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True" ItemTemplate="{StaticResource ResourceKey=PhoneNumbersTemplate}" Grid.ColumnSpan="2"/>
         <Button Name="btnNext" Content="Next" HorizontalAlignment="Left" Margin="461,207,0,0" VerticalAlignment="Top" Width="127" Click="btnNext_Click" Height="20" Grid.ColumnSpan="2"/>
         <Button x:Name="btnDelete" Content="Delete" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="34,146,0,0" VerticalAlignment="Top" Height="28" Width="76"/>
         <Button Name="btnPrevious" Content="Previous" HorizontalAlignment="Left" Margin="183,207,0,0" VerticalAlignment="Top" Width="127" Click="btnPrevious_Click" Height="20" Grid.ColumnSpan="2"/>

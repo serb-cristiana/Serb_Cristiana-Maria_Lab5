@@ -44,7 +44,7 @@ namespace Serb_Cristiana_Maria_Lab5
             txtPhoneNumber.SetBinding(TextBox.TextProperty, txtPhoneNumberBinding);
             txtSubscriber.SetBinding(TextBox.TextProperty, txtSubscriberBinding);
             txtContract_value.SetBinding(TextBox.TextProperty, txtContract_valueBinding);
-            txtContract_date.SetBinding(TextBox.TextProperty, txtSubscriberBinding);
+            txtContract_date.SetBinding(TextBox.TextProperty, txtContract_dateBinding);
         }
         private void lstPhonesLoad()
         {
